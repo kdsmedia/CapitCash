@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { KeyboardProvider } from 'react-native-keyboard-controller';
@@ -9,8 +9,8 @@ import {
   Inter_500Medium,
   Inter_600SemiBold,
   Inter_700Bold,
-  useFonts,
 } from '@expo-google-fonts/inter';
+import * as Font from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 
@@ -28,25 +28,31 @@ function RootLayoutNav() {
 }
 
 export default function RootLayout() {
-  const [fontsLoaded, fontError] = useFonts({
-    Inter_400Regular,
-    Inter_500Medium,
-    Inter_600SemiBold,
-    Inter_700Bold,
-  });
+  const [fontsReady, setFontsReady] = useState(false);
 
   useEffect(() => {
-    if (fontsLoaded || fontError) {
-      // Font error is non-fatal — fall back to system fonts and continue.
-      if (fontError) {
-        console.warn('[Fonts] Custom fonts failed to load, using system fonts:', fontError.message);
-      }
-      SplashScreen.hideAsync().catch(() => {});
-    }
-  }, [fontsLoaded, fontError]);
+    // Load fonts manually so we can guarantee the rejection is always caught.
+    // useFonts() from @expo-google-fonts can surface uncaught native rejections
+    // on Android in Expo Go when the font cache is empty.
+    Font.loadAsync({
+      Inter_400Regular,
+      Inter_500Medium,
+      Inter_600SemiBold,
+      Inter_700Bold,
+    })
+      .catch((err: unknown) => {
+        // Non-fatal — fall back to system fonts silently in production.
+        if (__DEV__) {
+          console.warn('[Fonts] Custom fonts unavailable, using system fonts.', err);
+        }
+      })
+      .finally(() => {
+        setFontsReady(true);
+        SplashScreen.hideAsync().catch(() => {});
+      });
+  }, []);
 
-  // Render with system fonts if custom fonts fail — do not block the app.
-  if (!fontsLoaded && !fontError) return null;
+  if (!fontsReady) return null;
 
   return (
     <SafeAreaProvider>
