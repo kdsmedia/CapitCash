@@ -7,6 +7,8 @@ Contact: altomediaindonesia@gmail.com
 
 ### Kerjakan sesuai README.md, setiap setelah mengerjakan satu hal anda wajib push commit update ke repositori saya!
 
+Tampilan game harus realistis, tombol navigasi harus menggunakan Joystik untuk arah kanan dan kiri!
+
 
 
 GAME DESIGN DOCUMENT
