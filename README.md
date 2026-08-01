@@ -9,7 +9,7 @@ Contact: altomediaindonesia@gmail.com
 
 Tampilan game harus realistis, tombol navigasi harus menggunakan Joystik untuk arah kanan dan kiri!
 
-
+bangun dulu expo go dan tampilkan QR untuk preview.
 
 GAME DESIGN DOCUMENT
 
