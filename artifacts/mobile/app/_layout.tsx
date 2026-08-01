@@ -37,10 +37,15 @@ export default function RootLayout() {
 
   useEffect(() => {
     if (fontsLoaded || fontError) {
-      SplashScreen.hideAsync();
+      // Font error is non-fatal — fall back to system fonts and continue.
+      if (fontError) {
+        console.warn('[Fonts] Custom fonts failed to load, using system fonts:', fontError.message);
+      }
+      SplashScreen.hideAsync().catch(() => {});
     }
   }, [fontsLoaded, fontError]);
 
+  // Render with system fonts if custom fonts fail — do not block the app.
   if (!fontsLoaded && !fontError) return null;
 
   return (
