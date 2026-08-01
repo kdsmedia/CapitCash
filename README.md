@@ -29,7 +29,7 @@ Genre
 Platform
 
 - Android
-- Mode Portrait (9:16)
+- Mode Portrait fullscreen (9:16)
 
 Target Pemain
 
@@ -140,7 +140,7 @@ Splash Screen
 - Logo game
 - Nama game
 - Animasi lampu arcade
-- Progress loading
+- Progress loading data 10 detik 100%
 
 Menu Utama
 
@@ -172,7 +172,7 @@ Bagian tengah:
 
 Bagian bawah:
 
-- Joystick kiri-kanan
+- Joystick (kanan)
 - Tombol Drop
 - Tombol Auto (opsional)
 - Tombol Keluar
@@ -279,7 +279,7 @@ Idle
 
 ↓
 
-Geser Horizontal
+Joystick
 
 ↓
 
@@ -564,7 +564,6 @@ Lucky Spin
 
 Menonton Iklan
 
-Top Up
 
 ---
 
@@ -1491,6 +1490,13 @@ Interstitial Ads
 Banner Ads
 
 - Hanya di menu, tidak saat gameplay.
+
+
+#admob:
+appid: ca-app-pub-6881903056221433~1656314672
+banner: ca-app-pub-6881903056221433/3863107396
+intersitial: ca-app-pub-6881903056221433/9251165441
+adreward: ca-app-pub-6881903056221433/6852801039
 
 ---
 
