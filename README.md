@@ -1496,19 +1496,19 @@ Banner Ads
 
 Pembelian Dalam Aplikasi
 
-Paket Coin
+Paket Coin (5x ads untuk membeli 5 coin)
 
-Paket Diamond
+Paket Diamond (10x ads atau 50 koin untuk membeli 5 diamond)
 
-Paket Token
+Paket Token (35x ads atau 350 koin untuk membeli 5 token)
 
-Starter Pack
+Starter Pack (50x ads atau 5000 koin untuk membeli starter pack)
 
-Premium Pass
+Premium Pass (50x ads atau 7500 koin untuk membeli premium pass)
 
-Exclusive Machine
+Exclusive Machine (75x ads atau 20000 koin untuk membeli 1 Exclusive Machine)
 
-Exclusive Theme
+Exclusive Theme (100x ads atau 50000 koin untuk membeli 1 Exclusive Theme)
 
 ---
 
