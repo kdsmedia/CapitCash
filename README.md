@@ -5,6 +5,9 @@ Developer: ALTOMEDIA
 Contact: altomediaindonesia@gmail.com 
 ========================================
 
+### Kerjakan sesuai README.md, setiap setelah mengerjakan satu hal anda wajib push commit update ke repositori saya!
+
+
 
 GAME DESIGN DOCUMENT
 
